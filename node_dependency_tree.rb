@@ -78,12 +78,15 @@ class NodeDependencyTree < ::Chef::Knife
   class CookbookNode < TreeNode
     def initialize(name)
       @@seen_cookbooks.add(name)
+      # XXX: Clean this up.
       cookbook_version = @@cookbook_versions[name]
       cookbooks = []
       if cookbook_version
         cookbook_version = cookbook_version.split.last
-        cookbooks = rest.get_rest("cookbooks/#{name}/#{cookbook_version}").manifest["metadata"]["dependencies"].keys.uniq.map.select do |cookbook_name|
-          !@@seen_cookbooks.include? cookbook_name
+        cookbook = rest.get_rest("cookbooks/#{name}/#{cookbook_version}")
+        dependencies = cookbook.manifest["metadata"]["dependencies"]
+        cookbooks = dependencies.keys.uniq.map.reject do |cookbook_name|
+          @@seen_cookbooks.include? cookbook_name
         end.map do |cookbook_name|
           CookbookNode.new(cookbook_name)
         end
