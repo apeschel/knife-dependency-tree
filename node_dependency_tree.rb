@@ -85,7 +85,7 @@ class NodeDependencyTree < ::Chef::Knife
         cookbook_version = cookbook_version.split.last
         cookbook = rest.get_rest("cookbooks/#{name}/#{cookbook_version}")
         dependencies = cookbook.manifest["metadata"]["dependencies"]
-        cookbooks = dependencies.keys.uniq.map.reject do |cookbook_name|
+        cookbooks = dependencies.keys.uniq.reject do |cookbook_name|
           @@seen_cookbooks.include? cookbook_name
         end.map do |cookbook_name|
           CookbookNode.new(cookbook_name)
