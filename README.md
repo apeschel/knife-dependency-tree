@@ -1,6 +1,8 @@
 Knife Dependency Tree
 =====================
 
+[![Gem Version](https://badge.fury.io/rb/knife-dependency-tree.png)](http://badge.fury.io/rb/knife-dependency-tree)
+
 Description
 -----------
 Generates a dependency tree of roles and cookbooks.
