@@ -4,23 +4,21 @@ Knife Dependency Tree
 [![Gem Version](https://badge.fury.io/rb/knife-dependency-tree.png)](http://badge.fury.io/rb/knife-dependency-tree)
 [![Build Status](https://travis-ci.org/apeschel/knife-dependency-tree.png?branch=master)](https://travis-ci.org/apeschel/knife-dependency-tree)
 
-
-Description
------------
 Generates a dependency tree of roles and cookbooks.
 
-Usage
------
-
-```
-knife node dependency tree NODE
-```
 
 Installation
 ------------
 Via RubyGems
 ```
 gem install knife-dependency-tree
+```
+
+Usage
+-----
+
+```
+knife node dependency tree NODE
 ```
 
 Caveats 
