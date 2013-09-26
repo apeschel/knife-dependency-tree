@@ -2,6 +2,8 @@ Knife Dependency Tree
 =====================
 
 [![Gem Version](https://badge.fury.io/rb/knife-dependency-tree.png)](http://badge.fury.io/rb/knife-dependency-tree)
+[![Build Status](https://travis-ci.org/apeschel/knife-dependency-tree.png?branch=master)](https://travis-ci.org/apeschel/knife-dependency-tree)
+
 
 Description
 -----------
