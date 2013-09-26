@@ -10,7 +10,6 @@ class NodeDependencyTree < ::Chef::Knife
 
   class TreeNode < NodeDependencyTree
     @@cookbook_versions = {}
-    @@seen_cookbooks = Set.new
 
     def initialize(name, children=[], color=:red)
       @name = name
@@ -87,6 +86,8 @@ class NodeDependencyTree < ::Chef::Knife
   end
 
   class CookbookNode < TreeNode
+    @@seen_cookbooks = Set.new
+
     def initialize(name)
       @@seen_cookbooks.add(name)
       dependencies = get_dependencies(name)
