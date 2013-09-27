@@ -23,7 +23,7 @@ knife node dependency tree NODE
 
 Caveats 
 -------
-Does not properly prase the cookbook versions in the environment. Assumes that
+Does not properly parse the cookbook versions in the environment. Assumes that
 cookbook is pinned to the version listed there with `=`. Any operators such as
 `>` `~>` may not be handled correctly.
 
